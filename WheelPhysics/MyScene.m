@@ -7,6 +7,7 @@
 //
 
 #import "MyScene.h"
+#import "WheelSpriteNode.h"
 
 @implementation MyScene
 
@@ -16,14 +17,18 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        // Physics:
+        self.physicsWorld.contactDelegate = self;
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
+        WheelSpriteNode *wheel = (WheelSpriteNode *)[[SKSpriteNode alloc] initWithTexture:[SKTexture textureWithImageNamed:@"dummy-circle"] color:nil size:CGSizeMake(32.0, 32.0)];
+        wheel.position = CGPointMake(160.0, 720.0);
+        wheel.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:wheel.size.width/2];
         
-        [self addChild:myLabel];
+        SKAction *rotate = [SKAction rotateByAngle:M_PI duration:1.0];
+        [wheel runAction:[SKAction repeatActionForever:rotate]];
+        
+        [self addChild:wheel];
     }
     return self;
 }
@@ -32,22 +37,29 @@
     /* Called when a touch begins */
     
     for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
+        //CGPoint location = [touch locationInNode:self];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
+//        
+//        sprite.position = location;
+//        
+//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
+//        
+//        [sprite runAction:[SKAction repeatActionForever:action]];
+//        
+//        
+//        [self addChild:sprite];
     }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    
+    
+    NSLog(@"Scene did begin contact.");
 }
 
 @end

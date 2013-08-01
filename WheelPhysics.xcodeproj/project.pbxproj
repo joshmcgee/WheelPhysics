@@ -25,6 +25,8 @@
 		03AADE4A17A96A6D007C2408 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AADE2217A96A6D007C2408 /* UIKit.framework */; };
 		03AADE5217A96A6D007C2408 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03AADE5017A96A6D007C2408 /* InfoPlist.strings */; };
 		03AADE5417A96A6D007C2408 /* WheelPhysicsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AADE5317A96A6D007C2408 /* WheelPhysicsTests.m */; };
+		03AADE6417A976C4007C2408 /* WheelSpriteNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 03AADE6317A976C4007C2408 /* WheelSpriteNode.m */; };
+		03AC223217A9A57200443D6B /* dummy-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 03AC223117A9A57100443D6B /* dummy-circle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		03AADE4F17A96A6D007C2408 /* WheelPhysicsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WheelPhysicsTests-Info.plist"; sourceTree = "<group>"; };
 		03AADE5117A96A6D007C2408 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03AADE5317A96A6D007C2408 /* WheelPhysicsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelPhysicsTests.m; sourceTree = "<group>"; };
+		03AADE6217A976C4007C2408 /* WheelSpriteNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelSpriteNode.h; sourceTree = "<group>"; };
+		03AADE6317A976C4007C2408 /* WheelSpriteNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelSpriteNode.m; sourceTree = "<group>"; };
+		03AC223117A9A57100443D6B /* dummy-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dummy-circle.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +128,8 @@
 		03AADE2617A96A6D007C2408 /* WheelPhysics */ = {
 			isa = PBXGroup;
 			children = (
+				03AADE6517A97D37007C2408 /* Graphics */,
+				03AADE5D17A96A94007C2408 /* Objects */,
 				03AADE2F17A96A6D007C2408 /* AppDelegate.h */,
 				03AADE3017A96A6D007C2408 /* AppDelegate.m */,
 				03AADE3217A96A6D007C2408 /* Main_iPhone.storyboard */,
@@ -165,6 +172,23 @@
 				03AADE5017A96A6D007C2408 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03AADE5D17A96A94007C2408 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				03AADE6217A976C4007C2408 /* WheelSpriteNode.h */,
+				03AADE6317A976C4007C2408 /* WheelSpriteNode.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		03AADE6517A97D37007C2408 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				03AC223117A9A57100443D6B /* dummy-circle.png */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +271,7 @@
 				03AADE4117A96A6D007C2408 /* Images.xcassets in Resources */,
 				03AADE3717A96A6D007C2408 /* Main_iPad.storyboard in Resources */,
 				03AADE3417A96A6D007C2408 /* Main_iPhone.storyboard in Resources */,
+				03AC223217A9A57200443D6B /* dummy-circle.png in Resources */,
 				03AADE2B17A96A6D007C2408 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +294,7 @@
 				03AADE3D17A96A6D007C2408 /* MyScene.m in Sources */,
 				03AADE3A17A96A6D007C2408 /* ViewController.m in Sources */,
 				03AADE3117A96A6D007C2408 /* AppDelegate.m in Sources */,
+				03AADE6417A976C4007C2408 /* WheelSpriteNode.m in Sources */,
 				03AADE2D17A96A6D007C2408 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +510,7 @@
 				03AADE5917A96A6D007C2408 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03AADE5A17A96A6D007C2408 /* Build configuration list for PBXNativeTarget "WheelPhysicsTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +519,7 @@
 				03AADE5C17A96A6D007C2408 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
